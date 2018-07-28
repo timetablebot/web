@@ -1,0 +1,25 @@
+{
+  "name": "timetable-bot-web",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+      "dotenv": "^7.0.0",
+      "uikit": "^3.0.3"
+  },
+  "devDependencies": {
+      "filesize": "^4.1.2",
+      "node-sass": "^4.11.0",
+      "parcel-bundler": "1.9.7",
+      "posthtml-expressions": "^1.1.0",
+      "ssh2": "latest",
+      "uncss": "^0.16.2"
+  },
+  "scripts": {
+    "serve": "parcel serve index.html",
+    "uncss": "node build/uncss.js",
+      "clean": "rm dist/* && rm .cache",
+    "build": "parcel build index.html && node build/opengraph.js",
+      "upload": "yarn clean && yarn build && node build/upload.js"
+  }
+}

@@ -1,0 +1,21 @@
+// --- UI-KIT ---
+// --------------
+
+// 1. Your custom variables and variable overwrites.
+$global-link-color: #DA7D02;
+
+// 2. Import default variables and available mixins.
+@import "~uikit/src/scss/variables-theme.scss";
+@import "~uikit/src/scss/mixins-theme.scss";
+
+// 3. Your custom mixin overwrites & variables.
+$inverse-global-color-mode: none;
+
+// 4. Import UIkit.
+@import "~uikit/src/scss/theme/_import.scss";
+@import "import_uikit_components";
+
+// --- CUSTOM ---
+// --------------
+
+@import "base";

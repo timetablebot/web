@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Quick information -->
+    <title>Als Stundenplan Bot</title>
+    <meta name="description" content="Der Stundenplan Bot schreibt euch, wenn ihr Vertretung habt."/>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Als Stundenplan Bot">
+    <meta property="og:description" content="Der Stundenplan Bot schreibt euch, wenn ihr Vertretung habt.">
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:url" content="https://stundenplanbot.ga"/>
+    <meta property="og:image" content="https://stundenplanbot.ga/opengraph.png"/>
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="144">
+    <meta property="og:image:height" content="144">
+
+    <!-- https://fonts.google.com/specimen/IBM+Plex+Sans?selection.family=IBM+Plex+Sans:400,700 -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700" rel="stylesheet">
+    <meta name="google-site-verification" content="Lt1LdJmltSxW1VQW7BTPMI4fOGQ4Bzs5ptfeVj9_vkI"/>
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./src/img/favicons/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./src/img/favicons/apple-touch-icon-152x152.png"/>
+    <link rel="icon" type="image/png" href="./src/img/favicons/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="./src/img/favicons/favicon-16x16.png" sizes="16x16"/>
+    <meta name="application-name" content="Stundenplan Bot"/>
+    <meta name="msapplication-TileColor" content="#56B0EF"/>
+    <meta name="msapplication-TileImage" content="./src/img/favicons/mstile-144x144.png"/>
+
+</head>
+<body>
+
+<div class="uk-container uk-margin-top">
+
+    <header class="uk-text-center">
+        <h1 class="uk-heading-line">
+            <span>
+                <img src="./src/img/icon/timetablebot_circle.svg" alt="Das Logo des Stundenplan Bots">
+                Stundenplan Bot
+            </span>
+        </h1>
+        <span class="uk-text-lead">Stundenplan&nbsp;Updates. Jeden&nbsp;Tag. 24&nbsp;Stunden</span>
+    </header>
+
+    <h2>Was?</h2>
+    <p>
+        Die Alte Landesschule stellt ihren Vertretungsplan auch im Internet zur Verfügung.
+        <br>
+        <br>
+        Wäre es nicht praktisch, wenn du einfach eine <b>Benachrichtigung auf dein Handy</b> bekommst, wenn
+        du Vertretung hast?
+        <br>
+        Das <b>ermöglicht dir dieser Bot</b> (ein Computerprogramm, welches den Stundenplan automatisch überprüft).
+        <br>
+        <br>
+        Alles was dazu brauchst ist Telegram. Damit kannst du den Bot benutzen.
+    </p>
+
+    <h2>So funktioniert's</h2>
+    <ul uk-accordion="collapsible: false" id="instructions-accordion">
+        <!-- Todo add expandable screenshots -->
+        <li>
+            <a class="uk-accordion-title" id="instructions-1-title">1. Hol dir Telegram</a>
+            <div class="uk-accordion-content">
+                <a href='https://play.google.com/store/apps/details?id=org.telegram.messenger' class="app-badge"
+                   target="_blank" rel="noopener">
+                    <img alt='Jetzt bei Google Play' src='./src/img/badges/google-play-de.png'/>
+                </a>
+                <a href='https://itunes.apple.com/app/telegram-messenger/id686449807' class="app-badge" target="_blank"
+                   rel="noopener">
+                    <img alt='Laden im App Store' src='src/img/badges/app-store-de.svg'/>
+                </a>
+                <a href='https://www.microsoft.com/store/apps/9NZTWSQNTD0S' class="app-badge" target="_blank"
+                   rel="noopener">
+                    <img alt='Jetzt von Microsoft' src='./src/img/badges/microsoft-de.png'/>
+                </a>
+                <br><br>
+                Du kannst Telegram bei diesen Stores holen.<br>
+                Lad es dir runter und erstelle dir einen Account.<br>
+                Komm danach <b>auf diese Webseite</b> zurück.
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title" id="instructions-2-title">2. Verbinde den Bot mit deinem Telegram</a>
+            <div class="uk-accordion-content">
+                <a href="https://t.me/alsstundenplanbot" class="telegram-click" target="_blank" rel="noopener">
+                    <div id="telegramBadge">
+                        <div class="logo-div">
+                            <img class="bot-logo" src="./src/img/icon/timetablebot_circle.svg">
+                        </div>
+                        <div class="telegram-div">
+                            <span class="telegram-name">ALS Vertretungsplan</span><br>
+                            <span class="telegram-extra">@alsstundenplanbot</span><br><br>
+                            <a class="telegram-button telegram-click" href="https://t.me/alsstundenplanbot"
+                               target="_blank" rel="noopener">
+                                Verbinde mit Telegram
+                            </a>
+                        </div>
+                    </div>
+                </a>
+                und tippe dann in Telegram auf "Start".
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">3. Antworte auf die Fragen des Bots</a>
+            <div class="uk-accordion-content">
+                Der Bot stellt dir einige Fragen, damit er dir die richtigen Nachrichten schicken kann.<br>
+                Falls du dabei nicht weiter kommst, <a href="#faq">gucke unten</a> beim FAQ.
+                <br><br>
+                Achtung: Ich übernehme keine Haftung für die Richtigkeit der Informationen.<br>
+                Es kann immer sein, dass durch einen Fehler in der Software unvollständige / falsche Informationen
+                übermittelt werden!<br>
+                Solltest du so einen Fehler entdecken, kannst du ihn immer gerne melden!
+                <br/><br/>
+                Wenn der Bot dir hilft, dann teile ihn doch vielleicht mit deinen Freunden
+                <br/>
+                <!-- Der Stundenplan Bot sendet dir automatisch Vertretungen. Hol ihn dir jetzt: https://stundenplanbot.ga/  -->
+                <a href="whatsapp://send?text=Der%20Stundenplan%20Bot%20sendet%20dir%20automatisch%20Vertretungen.%0aHol%20ihn%20dir%20jetzt%3a%20https%3a%2f%2fstundenplanbot.ga%2f%20"
+                   target="_blank" rel="noopener">
+                    <img src="./src/img/share/WhatsappShare.svg" alt="WhatsApp" class="share-img">
+                </a>
+                <a href="fb-messenger://share/?link=https%3a%2f%2fstundenplanbot.ga%2f"
+                   target="_blank" rel="noopener">
+                    <img src="./src/img/share/MessengerShare.svg" alt="Messenger" class="share-img">
+                </a>
+                <a href="https://telegram.me/share/url?url=https%3a%2f%2fstundenplanbot.ga%2f&text=Der%20Stundenplan%20Bot%20sendet%20dir%20automatisch%20Vertretungen."
+                   target="_blank" rel="noopener">
+                    <img src="./src/img/share/TelegramShare.svg" alt="Telegram" class="share-img">
+                </a>
+            </div>
+        </li>
+    </ul>
+
+    <br>
+
+    <h2>Fragen?</h2>
+    <ul uk-accordion id="faq">
+        <li>
+            <a class="uk-accordion-title">Kann man sich die "Nachrichten zum Tag" anzeigen lassen?</a>
+            <div class="uk-accordion-content">
+                Ja, das geht. Schreibe <code>/news</code> oder
+                tippe auf den <code>Neuigkeiten anzeigen</code> Button.
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Kann man sich den Mensaplan anzeigen lassen?</a>
+            <div class="uk-accordion-content">
+                Nein, das geht bisher noch nicht, aber dieses Feature wird bald hinzugefügt.<br/>
+                Wir benachrichtigen dich, wenn es soweit ist.
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Wie kann ich mir alle Funktionen / Buttons anzeigen lassen?</a>
+            <div class="uk-accordion-content">
+                Sende dazu einfach eine beliebige Nachricht an den Bot und er antwortet dir mit allen Funktionen. <br/>
+                Um eine Funktion aufzurufen, tippe dann auf einen Button (Knopf) unterhalb der Antwort!
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Was ist bedeutet "Du bist noch nicht verifiziert"?</a>
+            <div class="uk-accordion-content">
+                Der Bot muss genauso, wie der Stundenplan, wissen, <b>ob du zugreifen darfst</b>,
+                deswegen musst du dich verifizieren.<br>
+                Das machst du, indem du im Chat <code>/verify</code> eingibst oder auf den
+                <code>Verifizieren</code> Button drückst.
+                Danach musst du die Login-Daten von der Internetseite angeben.
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Welchen Nutzernamen muss ich angeben?</a>
+            <div class="uk-accordion-content">
+                Dabei musst du <b>nicht deinen Namen</b> eingeben, sondern den Namen,
+                den du zum <b>einloggen</b> auf der Webseite benutzt.
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Woher bekomme ich die Login-Daten für den Stundenplan?</a>
+            <div class="uk-accordion-content">
+                Diese sollte euch eurer Lehrer gegeben haben. Wenn nicht, dann frage ihn mal danach.<br/>
+                Vielleicht wissen es auch deine Mitschüler.
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Wie setzte ich meine Klasse?</a>
+            <div class="uk-accordion-content">
+                Damit der Bot, dir nur die wichtigen Nachrichten schicken kann,
+                muss er wissen in welcher Klasse du bist.
+                Gebe im Chat <code>/grade</code> ein oder drücke auf den <code>Klasse / Lehrer ändern</code> Button
+                und tippe unten auf deine Jahrgangsstufe und dann auf deinen Klassennamen.
+                <br><br>
+                Wenn du noch Schulstunden mit Schülern, die nicht in deiner Klasse sind, hast,
+                kannst du die Namen dieser Lehrer angeben.
+                Dann bekommst du auch Nachrichten für diese Stunden.
+                <br><br>
+                Wenn alles geklappt hat, bekommst du am eine Bestätigung.
+                In dieser werden deine Einstellungen noch einmal aufgelistet.
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Wie wähle ich die Kürzel der Lehrer aus?</a>
+            <div class="uk-accordion-content">
+                Tippe einfach auf den Namen und nach kurzer Zeit ändert sich das Kreuz zu einem Hacken.
+                Dann hast du diesen Lehrer ausgewählt.
+                Tippe noch einmal auf den Namen, dann ist der Lehrer wieder abgewählt.
+                Wenn du alle Lehrer ausgewählt hast, tippe ganz unten auf "Fertig".
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Etwas anderes geht nicht?</a>
+            <div class="uk-accordion-content">
+                Wenn du schon / noch Nachrichten an den Bot schreiben kannst,
+                schreibe <code>/feedback</code> oder drücke den <code>Feedback senden</code> Button
+                und gebe dann eine Beschreibung des Fehlers ein.
+                Wenn das nicht mehr geht, schreibe mir einfache eine Mail an
+                <a href='ma&#105;lt&#111;&#58;h&#37;65%79&#64;&#115;tundenpl&#97;%6Ebo%74%2&#69;g&#37;61'>
+                    hey&#64;stundenpl&#97;nb&#111;t&#46;g&#97;
+                </a>
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Wie funktioniert das ganze?</a>
+            <div class="uk-accordion-content">
+                Der Bot überprüft öfters im Hintergrund den Stundenplan im Internet und
+                verteilt die passenden Nachrichten an die entsprechenden Leute (also z.B. dich).
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Warum Telegram, nicht WhatsApp?</a>
+            <div class="uk-accordion-content">
+                WhatsApp ist genauso ein Messenger wie Telegram.
+                Aber WhatsApp fehlt eine entscheide Funktionalität:
+                Es gibt keine offizielle Programmierschnittstelle.
+                Damit wäre es ein deutlicher Mehraufwand für mich das Ganze mit WhatsApp zum Laufen zu bringen.
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title">Warum keine eigene App?</a>
+            <div class="uk-accordion-content">
+                Eine eigene App wäre zum Darstellen der Informationen sehr gut geeignet. Auch würden dem Nutzer die
+                Interaktionen leichter fallen.
+                <br/>
+                Aber eine App zu entwickeln ist sehr zeitaufwendig.
+                Diese müsste zudem dann an viele Geräte angepasst werden.
+                Und dabei spreche ich momentan nur von Android-Geräten.
+                <br/>
+                Für Apple-Geräte wäre es für mich gar nicht möglich eine App zu entwickeln,
+                da dort die Kosten für die App-Entwicklung extrem hoch sind.
+                <br/>
+                Und Windows wäre nochmal eine Sache für sich.
+                <br/>
+                Telegram hat de Apps schon für alle diesen Plattformen entwickelt
+                und der Bot muss "nur" noch drauf aufbauen.
+            </div>
+        </li>
+    </ul>
+
+    <br>
+    <br>
+
+    <div>
+        <!-- This is a button toggling the modal -->
+        <a href="./imprint.html" class="uk-link-muted" id="imprintToggle">Impressum & Datenschutz</a>
+
+        <!-- This is the modal -->
+        <div id="imprint" class="uk-modal-container" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <p id="imprint-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                    in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+</div>
+
+<script src="./src/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/.cache/
+/.idea/
+/dist/
+/node_modules/
+yarn-error.log
+*.iml
+.env.local
