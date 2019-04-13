@@ -20,6 +20,6 @@
         "uncss": "node build/uncss.js",
         "clean": "rm dist/* && rm .cache",
         "build": "parcel build index.html && node build/opengraph.js",
-        "upload": "yarn clean && yarn build && node build/upload.js"
+        "upload": "yarn build && node build/upload.js"
     }
 }
