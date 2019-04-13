@@ -1,7 +1,9 @@
 const fs = require('fs');
 const Ssh = require('ssh2');
 
-require('dotenv').config();
+require('dotenv').config({
+    path: '.env.local',
+});
 
 const privateKey = process.env.UPLOAD_SSH_KEY.replace('~', require('os').homedir());
 const externalPath = process.env.UPLOAD_DIR;
@@ -11,7 +13,7 @@ client.on('ready', () => {
     client.sftp(sftpUpload);
 }).connect({
     host: process.env.UPLOAD_HOST,
-    port: process.env.UPLOAD_PORT,
+    port: parseInt(process.env.UPLOAD_PORT),
     username: process.env.UPLOAD_USER,
     privateKey: fs.readFileSync(privateKey),
 });
