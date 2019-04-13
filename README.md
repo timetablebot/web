@@ -19,7 +19,7 @@ Follow the steps for building and start the development mode of parcel: `yarn ru
 
 ## Uploading
 
-There's the script [upload.js](https://raw.githubusercontent.com/timetablebot/web/master/build/upload.js), 
+There's the script [upload.js](https://github.com/timetablebot/web/master/build/upload.js), 
 which can help you with uploading the website to your server via sftp.
   
 1. In your `.env.local` file add all details for your server (entries are starting with `UPLOAD_`)
