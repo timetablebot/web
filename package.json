@@ -10,13 +10,13 @@
         "dotenv": "8.0.0",
         "filesize": "^4.1.2",
         "node-sass": "4.12.0",
-        "parcel-bundler": "1.9.7",
+        "parcel-bundler": "1.12.3",
         "posthtml-expressions": "1.1.1",
         "ssh2": "0.8.4",
         "uncss": "0.17.0"
     },
     "scripts": {
-        "serve": "parcel serve index.html",
+        "serve": "parcel serve index.html --no-hmr",
         "uncss": "node build/uncss.js",
         "clean": "rm dist/* && rm .cache",
         "build": "parcel build index.html && node build/opengraph.js",
