@@ -33,6 +33,8 @@ function updateModalText(dom) {
     }
     // Adding the new dom as child
     element.appendChild(dom);
+
+    document.getElementById('imprint').style.display = null;
 }
 
 function updateButton() {
