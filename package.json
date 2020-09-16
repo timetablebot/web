@@ -4,7 +4,6 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "node-forge": "0.10.0",
         "uikit": "3.5.7"
     },
     "devDependencies": {
@@ -22,5 +21,8 @@
         "clean": "rm dist/* && rm .cache",
         "build": "parcel build index.html && node build/opengraph.js",
         "upload": "yarn build && node build/upload.js"
+    },
+    "resolutions": {
+        "node-forge": "^0.10.0"
     }
 }
