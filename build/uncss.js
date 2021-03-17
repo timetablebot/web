@@ -35,7 +35,7 @@ const options = {
             let href = value.href;
             return href.split('/').pop();
         }).find(function (value) {
-            return value.indexOf('app.') >= 0;
+            return value.indexOf('index.') >= 0;
         });
     },
 };
