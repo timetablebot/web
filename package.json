@@ -15,7 +15,6 @@
     },
     "scripts": {
         "serve": "parcel serve index.html --no-hmr",
-        "clean": "rm dist/* && rm .cache",
         "build": "parcel build index.html && node build/opengraph.js"
     }
 }
