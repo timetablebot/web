@@ -17,7 +17,7 @@ Follow the steps for building and start the development mode of parcel: `yarn ru
 
 ## Publishing
 
-Build a Docker by using
+Build a Docker container by using
 ```bash
 docker build -t timetablebot/web:latest .
 ```
