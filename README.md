@@ -3,9 +3,7 @@
 This is a website to showcase the [TimetableBot](https://github.com/timetablebot/bot) and to
 help user to start using it.
 
-It's built using [Parcel](https://github.com/parcel-bundler/parcel), 
-but due to a [bug](https://github.com/parcel-bundler/parcel/issues/2791) 
-in the latest version (1.12.3) we stick to 1.9.7.
+It's built using [Parcel](https://github.com/parcel-bundler/parcel).
 
 ## Building
 
@@ -17,10 +15,9 @@ in the latest version (1.12.3) we stick to 1.9.7.
 
 Follow the steps for building and start the development mode of parcel: `yarn run serve`
 
-## Uploading
+## Publishing
 
-There's the script [upload.js](https://github.com/timetablebot/web/master/build/upload.js), 
-which can help you with uploading the website to your server via sftp.
-  
-1. In your `.env.local` file add all details for your server (entries are starting with `UPLOAD_`)
-2. Run `yarn run upload` to upload the files to your server 
+Build a Docker by using
+```bash
+docker build -t timetablebot/web:latest .
+```
