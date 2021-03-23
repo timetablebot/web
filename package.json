@@ -13,6 +13,9 @@
         "parcel": "^2.0.0-beta.2",
         "posthtml-expressions": "^1.7.1"
     },
+    "resolutions": {
+        "is-svg": "^4.2.2"
+    },
     "scripts": {
         "serve": "parcel serve index.html --no-hmr",
         "build": "parcel build index.html && node opengraph.js"
