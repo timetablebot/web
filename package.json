@@ -8,13 +8,14 @@
     },
     "devDependencies": {
         "@parcel/transformer-sass": "2.0.0-beta.2",
-        "dotenv": "^9.0.2",
+        "dotenv": "^10.0.0",
         "node-sass": "^6.0.0",
         "parcel": "^2.0.0-beta.2",
         "posthtml-expressions": "^1.7.1"
     },
     "resolutions": {
-        "is-svg": "^4.2.2"
+        "is-svg": "^4.2.2",
+        "ws": "^7.4.6"
     },
     "scripts": {
         "serve": "parcel serve index.html --no-hmr",
