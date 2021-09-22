@@ -15,8 +15,6 @@
     },
     "resolutions": {
         "is-svg": "^4.2.2",
-        "ws": "^7.4.6",
-        "normalize-url": "^6.0.1",
         "trim-newlines": "^4.0.2"
     },
     "scripts": {
