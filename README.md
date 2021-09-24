@@ -5,6 +5,10 @@ help user to start using it.
 
 It's built using [Parcel](https://github.com/parcel-bundler/parcel).
 
+## End of life
+
+This website has the reached the end of its life as it is no longer necessary. For more information take a look at the [timetablebot/bot](https://github.com/timetablebot/bot#end-of-life) repository.
+
 ## Building
 
 1. Copy the `.env` file to a `.env.local` file and fill in all needed information for the imprint.
